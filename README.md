@@ -5,7 +5,8 @@
 [License](LICENSE.md) · [How to contribute](CONTRIBUTING.md)
 
 > [!NOTE]
-> **Start here:** This is a free, beginner-friendly path from a first C++ program to a polished Qt Quick application with a C++ backend and QML interface. Plan for roughly **24 weeks at 8–10 hours per week**. The weeks are pacing suggestions, not deadlines. Advance when you can pass each phase's completion test.
+> **Start here**
+> This is a free, beginner-friendly path from a first C++ program to a polished Qt Quick application with a C++ backend and QML interface. Plan for roughly **24 weeks at 8–10 hours per week**. The weeks are pacing suggestions, not deadlines. Advance when you can pass each phase's completion test.
 
 ## What this roadmap teaches
 
@@ -20,9 +21,34 @@
 
 It does **not** require prior C++, Qt, QML, or GUI experience.
 
+## Contents
+
+- [Technology map and recommended versions](#1-the-technology-map)
+- [Complete visual roadmap](#2-the-complete-visual-roadmap)
+- [Your first seven days](#your-first-seven-days)
+- [How to study effectively](#3-how-to-study-effectively)
+- [Beginner glossary](#beginner-glossary)
+- [Phase 0: Tools and first compile](#4-phase-0--tools-and-the-first-compile)
+- [Phase 1: C++ foundations](#5-phase-1--c-foundations)
+- [Phase 2: Modern C++ and the standard library](#6-phase-2--modern-c-and-the-standard-library)
+- [Phase 3: Engineering tools](#7-phase-3--cmake-git-debugging-and-tests)
+- [Phase 4: Qt Core](#8-phase-4--qt-core-and-the-qt-object-model)
+- [Phase 5: QML and Qt Quick](#9-phase-5--qml-qt-quick-and-controls)
+- [Phase 6: C++ and QML integration](#10-phase-6--connecting-c-and-qml)
+- [Phase 7: Quality and deployment](#11-phase-7--quality-performance-and-deployment)
+- [Capstone specification](#12-capstone-specification)
+- [Project ladder](#13-project-ladder)
+- [Starter Qt Quick project](#14-a-modern-qt-quick-starter-project)
+- [Resources and YouTube channels](#15-free-curriculum-and-documentation)
+- [Topics to postpone](#16-topics-to-postpone)
+- [Optional Quickshell path](#17-optional-specialization--quickshell-and-linux-shells)
+- [Qt licensing](#18-qt-licensing-in-plain-language)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Graduation checklist](#19-graduation-checklist)
+
 ---
 
-# 1. The technology map
+## 1. The technology map
 
 | Name | What it is | What it does in an application |
 |---|---|---|
@@ -46,7 +72,9 @@ flowchart LR
     E --> F["Desktop or embedded application"]
 ```
 
-## What versions should a beginner use?
+*Text version:* C++ supplies the language, Qt supplies the application framework, QML supplies the declarative object language, and Qt Quick plus Qt Quick Controls supply the visual interface.
+
+### What versions should a beginner use?
 
 | Component | Recommendation |
 |---|---|
@@ -56,6 +84,10 @@ flowchart LR
 | Build system | Use modern target-based **CMake** and `qt_add_qml_module()`. |
 | Qt UI stack | Prefer **QML + Qt Quick + Qt Quick Controls** for the applications targeted by this guide. |
 | C++ compiler mode | Request C++23, but verify individual library features against the compiler's support table. |
+
+> [!NOTE]
+> **Version policy**
+> The curriculum targets C++23 and modern Qt 6 rather than locking every learner to one patch release. Use the newest stable Qt 6 patch practical for the target platform. The starter project requires Qt 6.5 or newer. Version-sensitive statements were last reviewed on **2026-08-16**.
 
 Authoritative references:
 
@@ -68,7 +100,7 @@ Authoritative references:
 
 ---
 
-# 2. The complete visual roadmap
+## 2. The complete visual roadmap
 
 ```mermaid
 flowchart TD
@@ -88,7 +120,9 @@ flowchart TD
     P6 -.-> M5["C++ plus QML application"]
 ```
 
-## Phase overview
+*Text version:* Learn C++ foundations, modern C++, engineering tools, Qt Core, QML and Qt Quick, C++/QML integration, and finally testing and deployment. Each major phase produces a project.
+
+### Phase overview
 
 | Phase | Suggested time | Main outcome |
 |---|---:|---|
@@ -101,9 +135,62 @@ flowchart TD
 | 6. C++ and QML | 3 weeks | Connect a clean backend to a declarative frontend |
 | 7. Shipping quality | 3 weeks | Test, profile, package, and document a capstone |
 
+### Choose a pace
+
+| Track | Weekly commitment | Approximate duration | Best for |
+|---|---:|---:|---|
+| Relaxed | 4–5 hours | 36–40 weeks | School, work, or other major commitments |
+| Standard | 8–10 hours | About 24 weeks | A sustainable default for most learners |
+| Intensive | 15–20 hours | 12–16 weeks | Learners who can code nearly every day |
+
+The calendar is only a pacing tool. Advance when the phase project works and the completion tests can be passed without copying a solution.
+
 ---
 
-# 3. How to study effectively
+## Your first seven days
+
+Use this section immediately. The detailed explanations appear later in the roadmap.
+
+### Day 1
+
+- [ ] Install or verify the compiler, CMake, Git, and an IDE/editor.
+- [ ] Compile and run the first C++ program.
+- [ ] Change the greeting and deliberately create one compiler error.
+
+### Day 2
+
+- [ ] Learn variables, initialization, types, and input/output.
+- [ ] Build a temperature converter.
+
+### Day 3
+
+- [ ] Learn conditions and loops.
+- [ ] Build FizzBuzz and begin a number-guessing game.
+
+### Day 4
+
+- [ ] Learn functions and scope.
+- [ ] Refactor the guessing game into functions.
+
+### Day 5
+
+- [ ] Learn strings and vectors.
+- [ ] Build a small grade tracker.
+
+### Day 6
+
+- [ ] Use a debugger on the guessing game.
+- [ ] Fix at least one issue by inspecting state rather than guessing.
+
+### Day 7
+
+- [ ] Rebuild one program from an empty folder without notes.
+- [ ] Commit the week's projects to Git.
+- [ ] Write three lessons learned and choose next week's exercises.
+
+---
+
+## 3. How to study effectively
 
 Use this loop for every topic:
 
@@ -125,10 +212,10 @@ A sustainable 8–10 hour week:
 | Review and notes | 10% | Recall practice and a weekly retrospective |
 
 > [!WARNING]
-> **Tutorial familiarity is not programming ability.**
+> **Tutorial familiarity is not programming ability**
 > Watching somebody solve a problem feels easier than solving it. Every week must include at least one small program built from an empty folder without a tutorial open.
 
-## The stuck protocol
+### The stuck protocol
 
 When code fails:
 
@@ -142,11 +229,47 @@ When code fails:
 
 ---
 
-# 4. Phase 0 — Tools and the first compile
+## Beginner glossary
 
-**Time:** 1–2 days
+| Term | Plain-language meaning |
+|---|---|
+| **Source file** | A human-readable text file containing program code, such as `main.cpp` or `Main.qml` |
+| **Compiler** | A program that translates C++ source code into machine code |
+| **Linker** | Combines compiled files and libraries into an executable or library |
+| **Executable** | A built program that the operating system can run |
+| **Runtime** | The period while a program is executing |
+| **Library** | Reusable code that an application can call |
+| **Framework** | A larger structure and set of conventions used to build an application |
+| **API** | The public functions, types, properties, or commands used to interact with code |
+| **Build system** | Describes how source files and dependencies become a finished program |
+| **Event loop** | Waits for input, timers, messages, and other events, then dispatches the appropriate work |
+| **Signal and slot** | Qt's notification mechanism for connecting events to responses |
+| **Property binding** | A QML relationship that automatically recalculates a property when its dependencies change |
+| **Model** | Authoritative data made available to one or more views |
+| **View** | A visual structure that displays model data |
+| **Delegate** | A component responsible for displaying one model entry |
+| **Backend** | The data, rules, persistence, networking, and services behind the visual interface |
+| **Frontend** | The visual interface and interaction layer presented to the user |
 
-## Install or locate
+Return to this glossary whenever a term appears unfamiliar. Understanding the idea matters more than memorizing the wording.
+
+> [!TIP]
+> **Required now versus later**
+> Treat fundamentals, projects, and completion tests as required. Treat advanced templates, custom allocators, lock-free concurrency, deep coroutine machinery, custom scene-graph rendering, and Qt private APIs as later specializations. Recognition is enough until a real project needs them.
+
+---
+
+## 4. Phase 0 — Tools and the first compile
+
+> [!IMPORTANT]
+> **Phase outcome**
+> Understand the basic build pipeline and compile, run, and debug a small C++ program.
+
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| None | 1–2 days | A working program and an explanation of how source becomes an executable |
+
+### Install or locate
 
 - A C++ compiler with useful C++23 support: recent GCC, Clang, or MSVC.
 - CMake and preferably Ninja.
@@ -169,7 +292,7 @@ qtpaths6 --qt-version
 
 Only one working C++ compiler is required.
 
-## First C++ program
+### First C++ program
 
 Create `main.cpp`:
 
@@ -201,7 +324,7 @@ On Windows PowerShell, the final command is normally:
 .\hello.exe
 ```
 
-## Completion test
+### Completion test
 
 Explain this path in plain language:
 
@@ -215,15 +338,24 @@ Also recognize the difference between:
 - **Linker error:** compiled pieces cannot be combined, often because a definition is missing.
 - **Runtime error:** the executable starts but behaves incorrectly or terminates.
 
+- [ ] I can explain the build pipeline without looking it up.
+- [ ] I can distinguish a compiler error, linker error, and runtime error from a simple example.
+
 ---
 
-# 5. Phase 1 — C++ foundations
+## 5. Phase 1 — C++ foundations
 
-**Time:** Weeks 1–4
+> [!IMPORTANT]
+> **Phase outcome**
+> Write small multi-file C++ programs using functions, containers, algorithms, files, and simple classes.
+
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Phase 0 or equivalent tool familiarity | 4 weeks | A multi-file console application built without a tutorial open |
 
 Use [LearnCpp](https://www.learncpp.com/) as the main written course. It is free and teaches modern C++ progressively. Use [cppreference](https://en.cppreference.com/w/cpp) to look up known topics; it is a reference, not a beginner course.
 
-## Week 1 — Values and control flow
+### Week 1 — Values and control flow
 
 Learn:
 
@@ -241,9 +373,9 @@ Build:
 - Number-guessing game.
 - Menu-driven calculator with input validation.
 
-**Completion test:** write FizzBuzz and the calculator from an empty file.
+- [ ] **Completion test:** write FizzBuzz and the calculator from an empty file.
 
-## Week 2 — Functions and files
+### Week 2 — Functions and files
 
 Learn:
 
@@ -259,9 +391,9 @@ Build:
 - Rock-paper-scissors with functions for each rule.
 - A small reusable math or text utility library.
 
-**Completion test:** explain why each declaration and definition lives in its selected file.
+- [ ] **Completion test:** explain why each declaration and definition lives in its selected file.
 
-## Week 3 — Strings, containers, and algorithms
+### Week 3 — Strings, containers, and algorithms
 
 Learn:
 
@@ -279,9 +411,9 @@ Build:
 - Grade tracker with statistics.
 - Contact list stored in a simple text format.
 
-**Completion test:** load records, filter them, sort them, calculate a result, and save them.
+- [ ] **Completion test:** load records, filter them, sort them, calculate a result, and save them.
 
-## Week 4 — Classes and object design
+### Week 4 — Classes and object design
 
 Learn:
 
@@ -298,15 +430,21 @@ Build:
 - Inventory containing products.
 - Small turn-based combat model.
 
-**Completion test:** design two collaborating classes without public mutable data.
+- [ ] **Completion test:** design two collaborating classes without public mutable data.
 
 ---
 
-# 6. Phase 2 — Modern C++ and the standard library
+## 6. Phase 2 — Modern C++ and the standard library
 
-**Time:** Weeks 5–8
+> [!IMPORTANT]
+> **Phase outcome**
+> Manage ownership and lifetime safely while using modern standard-library types and algorithms.
 
-## Week 5 — Lifetime, ownership, and RAII
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Phase 1 completion tests | 4 weeks | A persistent CLI task tracker with clear ownership and error handling |
+
+### Week 5 — Lifetime, ownership, and RAII
 
 Learn:
 
@@ -326,9 +464,9 @@ Build:
 - Tree or scene structure with explicit ownership.
 - Exercise that identifies dangling references and lifetime errors.
 
-**Completion test:** draw the owner and expected lifetime of every object in a small program.
+- [ ] **Completion test:** draw the owner and expected lifetime of every object in a small program.
 
-## Week 6 — Errors and vocabulary types
+### Week 6 — Errors and vocabulary types
 
 Learn:
 
@@ -344,9 +482,9 @@ Build:
 - File organizer with `std::filesystem`.
 - Timer or Pomodoro engine using `std::chrono`.
 
-**Completion test:** model “missing,” “one of several states,” and “success or error” without magic sentinel values.
+- [ ] **Completion test:** model “missing,” “one of several states,” and “success or error” without magic sentinel values.
 
-## Week 7 — Copying, moving, and library fluency
+### Week 7 — Copying, moving, and library fluency
 
 Learn:
 
@@ -363,9 +501,9 @@ Build:
 - Benchmark comparing two reasonable container choices.
 - Refactor loops into standard algorithms where clarity improves.
 
-**Completion test:** justify a container choice using access pattern, ordering, invalidation, and complexity.
+- [ ] **Completion test:** justify a container choice using access pattern, ordering, invalidation, and complexity.
 
-## Week 8 — C++20/23 essentials and a CLI project
+### Week 8 — C++20/23 essentials and a CLI project
 
 Prioritize:
 
@@ -386,15 +524,21 @@ Build a persistent CLI task tracker with:
 - Multiple source files.
 - No raw owning pointers.
 
-**Completion test:** add a feature without rewriting the whole program and without mixing all input/output into the data classes.
+- [ ] **Completion test:** add a feature without rewriting the whole program and without mixing all input/output into the data classes.
 
 ---
 
-# 7. Phase 3 — CMake, Git, debugging, and tests
+## 7. Phase 3 — CMake, Git, debugging, and tests
 
-**Time:** Weeks 9–10
+> [!IMPORTANT]
+> **Phase outcome**
+> Configure, build, test, debug, analyze, and version a project from a clean checkout.
 
-## CMake
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Phase 2 project | 2 weeks | Another learner can build and test the project from its README |
+
+### CMake
 
 Learn:
 
@@ -430,7 +574,7 @@ ctest --test-dir build --output-on-failure
 
 Read the free [official CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/) and the [Qt CMake manual](https://doc.qt.io/qt-6/cmake-manual.html).
 
-## Git
+### Git
 
 Learn:
 
@@ -442,7 +586,7 @@ Learn:
 
 Read [Pro Git](https://git-scm.com/book/en/v2), which is free online.
 
-## Debugging and quality tools
+### Debugging and quality tools
 
 Practice:
 
@@ -466,17 +610,23 @@ target_link_options(community_cli PRIVATE
 )
 ```
 
-**Completion test:** configure, build, test, and debug a project from a fresh clone using only its README.
+- [ ] **Completion test:** configure, build, test, and debug a project from a fresh clone using only its README.
 
 ---
 
-# 8. Phase 4 — Qt Core and the Qt object model
+## 8. Phase 4 — Qt Core and the Qt object model
 
-**Time:** Weeks 11–13
+> [!IMPORTANT]
+> **Phase outcome**
+> Build an event-driven Qt Core application that handles data and asynchronous work without blocking.
+
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| C++ classes, RAII, CMake, debugging, and tests | 3 weeks | A tested Qt Core timer, data application, or API client |
 
 Start with [Create Your First Applications](https://doc.qt.io/qt-6/create-your-first-applications.html), the [Qt 6 documentation](https://doc.qt.io/qt-6/), and the examples installed with Qt.
 
-## Week 11 — Qt foundations
+### Week 11 — Qt foundations
 
 Learn:
 
@@ -493,9 +643,9 @@ Build:
 - Event-driven status monitor.
 - Small signal-and-slot experiment with custom objects.
 
-**Completion test:** explain why a long blocking operation freezes an event-loop thread.
+- [ ] **Completion test:** explain why a long blocking operation freezes an event-loop thread.
 
-## Week 12 — Files, JSON, settings, and networking
+### Week 12 — Files, JSON, settings, and networking
 
 Learn:
 
@@ -510,9 +660,9 @@ Build:
 - JSON-backed settings or notes service.
 - Small API client with loading, success, empty, and error states.
 
-**Completion test:** retrieve or load data asynchronously and report failures without blocking the UI thread.
+- [ ] **Completion test:** retrieve or load data asynchronously and report failures without blocking the UI thread.
 
-## Week 13 — Models, threads, and Qt Test
+### Week 13 — Models, threads, and Qt Test
 
 Learn:
 
@@ -531,13 +681,19 @@ Build:
 - Background calculation with safe result delivery.
 - Tests for JSON conversion and domain rules.
 
-**Completion test:** explain which thread owns each `QObject` and how results cross thread boundaries.
+- [ ] **Completion test:** explain which thread owns each `QObject` and how results cross thread boundaries.
 
 ---
 
-# 9. Phase 5 — QML, Qt Quick, and Controls
+## 9. Phase 5 — QML, Qt Quick, and Controls
 
-**Time:** Weeks 14–18
+> [!IMPORTANT]
+> **Phase outcome**
+> Build a responsive, reusable, accessible interface using QML, Qt Quick, and Qt Quick Controls.
+
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Phase 1 C++ foundations and basic Qt concepts | 5 weeks | A polished QML dashboard with multiple states and no unexplained warnings |
 
 Use the official [QML for Beginners YouTube playlist](https://www.youtube.com/playlist?list=PLizsthdRd0YwxekSSxUr5QVKIMKm6Y7bu) and the free [Qt Academy catalog](https://www.qt.io/academy/course-catalog) as the primary course.
 
@@ -550,7 +706,9 @@ flowchart LR
     Q5 --> Q6["States, animation, accessibility"]
 ```
 
-## Week 14 — QML language fundamentals
+*Text version:* Start with QML syntax and bindings, then build reusable layouts and controls, connect data through models and delegates, and finish with states, animation, debugging, and accessibility.
+
+### Week 14 — QML language fundamentals
 
 Learn:
 
@@ -567,9 +725,9 @@ Build:
 - Counter with reusable controls.
 - Unit converter with live property bindings.
 
-**Completion test:** explain why assigning to a bound property may replace its binding.
+- [ ] **Completion test:** explain why assigning to a bound property may replace its binding.
 
-## Week 15 — Layout and responsive UI
+### Week 15 — Layout and responsive UI
 
 Learn:
 
@@ -585,9 +743,9 @@ Build:
 - Responsive dashboard that works at several window sizes.
 - Reusable card, toolbar, and empty-state components.
 
-**Completion test:** resize the interface aggressively without overlaps or clipped essential content.
+- [ ] **Completion test:** resize the interface aggressively without overlaps or clipped essential content.
 
-## Week 16 — Controls and application structure
+### Week 16 — Controls and application structure
 
 Learn:
 
@@ -602,9 +760,9 @@ Build:
 - Multi-page settings application.
 - Light/dark theme based on centralized tokens.
 
-**Completion test:** add a new page and navigation action without editing unrelated components.
+- [ ] **Completion test:** add a new page and navigation action without editing unrelated components.
 
-## Week 17 — Models, views, and delegates
+### Week 17 — Models, views, and delegates
 
 Learn:
 
@@ -619,9 +777,9 @@ Build:
 - Contact browser.
 - Media or application launcher UI with filtering.
 
-**Completion test:** replace the prototype model without redesigning the delegate.
+- [ ] **Completion test:** replace the prototype model without redesigning the delegate.
 
-## Week 18 — States, animation, debugging, and polish
+### Week 18 — States, animation, debugging, and polish
 
 Learn:
 
@@ -636,15 +794,21 @@ Build:
 - Animated notification center.
 - Polished dashboard with loading, error, empty, and populated states.
 
-**Completion test:** the application works by keyboard, communicates state clearly, and has no unexplained QML warnings.
+- [ ] **Completion test:** the application works by keyboard, communicates state clearly, and has no unexplained QML warnings.
 
 ---
 
-# 10. Phase 6 — Connecting C++ and QML
+## 10. Phase 6 — Connecting C++ and QML
 
-**Time:** Weeks 19–21
+> [!IMPORTANT]
+> **Phase outcome**
+> Connect a testable C++ backend to a declarative QML frontend through focused APIs and models.
 
-## Target architecture
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Qt Core plus QML models, views, delegates, and bindings | 3 weeks | A C++ and QML task manager with persistence and automated tests |
+
+### Target architecture
 
 ```mermaid
 flowchart LR
@@ -661,9 +825,11 @@ flowchart LR
     API -->|"notifications and models"| UI
 ```
 
+*Text version:* QML sends user actions to a small public API. That API coordinates testable C++ domain logic and services. Results return to QML through properties, signals, and models.
+
 Keep visual structure and small interactions in QML. Keep authoritative data, business rules, persistence, networking, and substantial computation in C++. Avoid C++ code that searches the QML object tree by object ID.
 
-## Week 19 — Exposing types and state
+### Week 19 — Exposing types and state
 
 Learn:
 
@@ -681,9 +847,9 @@ Build:
 - C++ settings service displayed and edited from QML.
 - Backend status object with observable properties.
 
-**Completion test:** a C++ state change updates QML through notification, without polling.
+- [ ] **Completion test:** a C++ state change updates QML through notification, without polling.
 
-## Week 20 — C++ models in QML
+### Week 20 — C++ models in QML
 
 Learn:
 
@@ -698,9 +864,9 @@ Build:
 - C++ task model displayed by a QML `ListView`.
 - Add, edit, remove, filter, and persist tasks.
 
-**Completion test:** individual changes update the correct delegate without resetting the entire model.
+- [ ] **Completion test:** individual changes update the correct delegate without resetting the entire model.
 
-## Week 21 — Application architecture
+### Week 21 — Application architecture
 
 Learn:
 
@@ -719,15 +885,21 @@ Build a task manager with:
 - Unit tests for domain rules and serialization.
 - Clear loading, error, empty, and populated states.
 
-**Completion test:** domain tests run without starting a graphical application.
+- [ ] **Completion test:** domain tests run without starting a graphical application.
 
 ---
 
-# 11. Phase 7 — Quality, performance, and deployment
+## 11. Phase 7 — Quality, performance, and deployment
 
-**Time:** Weeks 22–24
+> [!IMPORTANT]
+> **Phase outcome**
+> Test, profile, package, document, and release a portfolio-quality Qt application.
 
-## Week 22 — Testing
+| Prerequisite | Suggested time | Main proof |
+|---|---:|---|
+| Completed C++ and QML integration project | 3 weeks | A release build that another person can install, test, and understand |
+
+### Week 22 — Testing
 
 Create a small test pyramid:
 
@@ -738,9 +910,9 @@ Create a small test pyramid:
 
 Learn Qt Test, [Qt Quick Test](https://doc.qt.io/qt-6/qtquicktest-index.html), CTest integration, fixtures, parameterized tests, and deterministic handling of time and network behavior.
 
-**Completion test:** introduce a deliberate regression, observe a relevant test fail, fix it, and watch the test pass.
+- [ ] **Completion test:** introduce a deliberate regression, observe a relevant test fail, fix it, and watch the test pass.
 
-## Week 23 — Diagnostics and performance
+### Week 23 — Diagnostics and performance
 
 Learn:
 
@@ -751,9 +923,9 @@ Learn:
 - Sanitizers and static analysis in regular development.
 - `qmllint` and QML compiler warnings.
 
-**Completion test:** identify one measured bottleneck, improve it, and preserve before/after evidence.
+- [ ] **Completion test:** identify one measured bottleneck, improve it, and preserve before/after evidence.
 
-## Week 24 — Deployment and capstone
+### Week 24 — Deployment and capstone
 
 Learn:
 
@@ -765,9 +937,11 @@ Learn:
 
 Follow the official [Qt deployment documentation](https://doc.qt.io/qt-6/deployment.html) because deployment differs across Linux, Windows, macOS, mobile, and embedded targets.
 
+- [ ] **Completion test:** produce a documented release build from a clean checkout and verify it on the intended target platform.
+
 ---
 
-# 12. Capstone specification
+## 12. Capstone specification
 
 Build an **expense tracker**, **study planner**, **media organizer**, or similarly sized application.
 
@@ -786,13 +960,28 @@ Required features:
 - A release build and documented installation process.
 - README with screenshots, architecture, controls, build instructions, known limitations, and license.
 
-## Definition of done
+### Capstone evaluation rubric
+
+| Area | Passing requirement |
+|---|---|
+| Functionality | Every primary workflow works without a crash or silent failure |
+| Architecture | Domain rules and data ownership do not depend on visual QML components |
+| Models | Individual changes update the correct delegates without unnecessary full resets |
+| Persistence | Saved data survives a restart and malformed input produces a useful error |
+| Testing | Important rules, conversions, and persistence behavior have automated tests |
+| Error states | Loading, empty, populated, offline, and failure states are communicated clearly |
+| Accessibility | Primary workflows are usable by keyboard and important controls have accessible labels |
+| Diagnostics | There are no unexplained compiler, QML, sanitizer, or static-analysis warnings |
+| Documentation | Another person can build, test, and use the application from its instructions |
+| Deployment | A release build runs on a clean instance of the intended platform |
+
+### Definition of done
 
 The capstone is complete when another person can clone it, follow the README, build it, run its tests, understand its architecture, and use its primary workflow without private instructions.
 
 ---
 
-# 13. Project ladder
+## 13. Project ladder
 
 | Level | Project | Main skills |
 |---:|---|---|
@@ -810,11 +999,11 @@ Do not make every practice project a calculator. Reuse the same concept in diffe
 
 ---
 
-# 14. A modern Qt Quick starter project
+## 14. A modern Qt Quick starter project
 
 This example uses C++23, CMake, Qt Quick, a QML module, and modern unversioned imports. It requires Qt 6.5 or newer so it remains usable across several recent Qt 6 releases.
 
-## Directory structure
+### Directory structure
 
 ```text
 community-hello/
@@ -823,7 +1012,7 @@ community-hello/
 └── Main.qml
 ```
 
-## `CMakeLists.txt`
+### `CMakeLists.txt`
 
 ```cmake
 cmake_minimum_required(VERSION 3.21)
@@ -855,7 +1044,7 @@ install(TARGETS CommunityHello
 )
 ```
 
-## `main.cpp`
+### `main.cpp`
 
 ```cpp
 #include <QGuiApplication>
@@ -876,7 +1065,7 @@ int main(int argc, char* argv[])
 }
 ```
 
-## `Main.qml`
+### `Main.qml`
 
 ```qml
 import QtQuick
@@ -909,7 +1098,7 @@ ApplicationWindow {
 }
 ```
 
-## Build and run
+### Build and run
 
 ```bash
 cmake -S . -B build -G Ninja
@@ -927,13 +1116,13 @@ cmake --build build --target CommunityHello_qmllint
 
 ---
 
-# 15. Free curriculum and documentation
+## 15. Free curriculum and documentation
 
 > [!IMPORTANT]
 > **Resource status**
 > The links in this section were checked on **2026-08-16**. The curriculum favors official documentation, actively maintained courses, and modern Qt 6/CMake practices. A resource can be older and still teach a timeless concept well; anything version-sensitive is clearly labeled.
 
-## How to use the resources
+### How to use the resources
 
 Use three kinds of material together:
 
@@ -943,7 +1132,7 @@ Use three kinds of material together:
 
 Do not attempt to watch every linked channel. Pick one primary course, use documentation alongside it, and open supplementary videos only for a topic currently being practiced.
 
-## Primary learning path
+### Primary learning path
 
 1. **[LearnCpp](https://www.learncpp.com/)** — structured modern C++ course.
 2. **[Mike Shah's Modern C++ playlist](https://www.youtube.com/playlist?list=PLvv0ScY6vfd8j-tlhYVPYgiIyXduu6m-L)** — a long, ordered video companion from fundamentals onward.
@@ -955,7 +1144,7 @@ Do not attempt to watch every linked channel. Pick one primary course, use docum
 8. **[QML and C++ integration overview](https://doc.qt.io/qt-6/qtqml-cppintegration-overview.html)** — official bridge between the two layers.
 9. **[Qt examples and tutorials](https://doc.qt.io/qt-6/qtexamplesandtutorials.html)** — runnable examples for targeted study.
 
-## Exact resource order by phase
+### Exact resource order by phase
 
 | Roadmap phase | Primary resource | Supplement only when needed |
 |---|---|---|
@@ -967,7 +1156,7 @@ Do not attempt to watch every linked channel. Pick one primary course, use docum
 | Phase 6: C++ with QML | [QML/C++ integration overview](https://doc.qt.io/qt-6/qtqml-cppintegration-overview.html) and Qt Academy's C++ exposure courses | Somco for a second explanation; KDAB for deeper models and architecture |
 | Phase 7: quality and shipping | Official testing, profiling, and [deployment documentation](https://doc.qt.io/qt-6/deployment.html) | Current KDAB and Qt Group talks for targeted advanced topics |
 
-## Reference material
+### Reference material
 
 | Question | Best starting reference |
 |---|---|
@@ -983,7 +1172,7 @@ Do not attempt to watch every linked channel. Pick one primary course, use docum
 | What code does a compiler generate? | [Compiler Explorer](https://godbolt.org/) |
 | What implicit C++ operations are happening? | [C++ Insights](https://cppinsights.io/) |
 
-## Good English-language YouTube channels
+### Good English-language YouTube channels
 
 | Channel | Current value | Best use | Start when |
 |---|---|---|---|
@@ -1002,7 +1191,7 @@ Useful secondary playlists:
 - [CppCon 2023 Back to Basics](https://www.youtube.com/playlist?list=PLHTh1InhhwT7gQEuYznhhvAYTel0qzl72) — older than this guide, but the language fundamentals remain useful; check the channel for newer talks on the same topics.
 - [KDAB's curated QML resources](https://www.kdab.com/top-100-qml-resources-kdab/)
 
-## Resource quality rules for community members
+### Resource quality rules for community members
 
 Before following a tutorial, check:
 
@@ -1020,7 +1209,7 @@ Before following a tutorial, check:
 
 ---
 
-# 16. Topics to postpone
+## 16. Topics to postpone
 
 Delay these until the core roadmap is comfortable:
 
@@ -1036,7 +1225,7 @@ Delay these until the core roadmap is comfortable:
 
 Postponing is not avoiding. It protects the foundation needed to understand these topics later.
 
-## Common traps
+### Common traps
 
 - Learning from Qt 5/qmake material as if it were the current build path.
 - Using raw owning pointers where a value, container, or RAII owner is clearer.
@@ -1051,7 +1240,7 @@ Postponing is not avoiding. It protects the foundation needed to understand thes
 
 ---
 
-# 17. Optional specialization — Quickshell and Linux shells
+## 17. Optional specialization — Quickshell and Linux shells
 
 Quickshell is a Qt Quick/QML toolkit for building desktop-shell components. It is an excellent later project, but it is not a substitute for learning QML fundamentals.
 
@@ -1067,6 +1256,8 @@ flowchart TD
     F --> G["A maintainable personal desktop shell"]
 ```
 
+*Text version:* Learn reusable QML components first, then Quickshell fundamentals, shell widgets, compositor integration, and finally a maintainable complete desktop shell.
+
 Suggested sequence:
 
 1. Read the [Quickshell introduction](https://quickshell.outfoxxed.me/docs/guide/introduction/).
@@ -1080,7 +1271,7 @@ Third-party Quickshell videos age quickly and may target a different Linux distr
 
 ---
 
-# 18. Qt licensing in plain language
+## 18. Qt licensing in plain language
 
 Qt is available under commercial and open-source licenses. Learning and experimenting with an open-source Qt distribution is free. Distribution obligations depend on the Qt modules, their licenses, how the application is linked and shipped, and whether Qt itself was modified.
 
@@ -1097,104 +1288,73 @@ This section is an orientation, not legal advice.
 
 ---
 
-# 19. Master progress tracker
+## Frequently asked questions
 
-## C++ foundation
+### Do I need to master C++ before starting QML?
 
-- [ ] I can compile and run a C++23 program.
-- [ ] I can explain initialization, assignment, scope, and lifetime.
-- [ ] I can divide a program into functions and source/header files.
-- [ ] I can use strings, vectors, algorithms, and file I/O.
-- [ ] I can design small classes with enforced invariants.
-- [ ] I can explain ownership and apply RAII.
-- [ ] I choose smart pointers only when dynamic ownership is necessary.
-- [ ] I can use `optional`, `variant`, and `expected` appropriately.
-- [ ] I can explain a container choice.
+No. Complete the C++ foundations and become comfortable with functions, classes, containers, references, lifetime, and basic CMake. Then begin Qt and QML while continuing to improve C++. Waiting to “finish C++” first can delay useful projects indefinitely.
 
-## Engineering tools
+### Is QML the same as JavaScript?
 
-- [ ] I can configure and build an out-of-source CMake project.
-- [ ] I can read a compiler or linker diagnostic.
-- [ ] I can use breakpoints, stepping, watches, and the call stack.
-- [ ] I can run tests with CTest.
-- [ ] I can run sanitizers and static analysis.
-- [ ] I can create focused Git commits and inspect their diffs.
-- [ ] A new contributor can build one of my projects from its README.
+No. QML is a declarative object language with properties, bindings, signals, components, and a type system. It can use JavaScript expressions and functions, but an application should not move all domain logic into QML JavaScript.
 
-## Qt Core
+### Is Qt free?
 
-- [ ] I understand the event loop.
-- [ ] I understand `QObject` identity and parent-child ownership.
-- [ ] I can connect signals and slots safely.
-- [ ] I can use timers, files, JSON, settings, and asynchronous networking.
-- [ ] I understand model roles and thread affinity.
-- [ ] I can test nonvisual Qt code.
+Qt has commercial and open-source licensing options. Learning and experimenting with an open-source Qt distribution is free. Distribution can create obligations, so review [the licensing section](#18-qt-licensing-in-plain-language) before shipping software.
 
-## QML and Qt Quick
+### Should I learn Qt Widgets too?
 
-- [ ] I understand object trees, properties, bindings, and signals.
-- [ ] I can create reusable components.
-- [ ] I can build responsive layouts without conflicting geometry rules.
-- [ ] I can use Qt Quick Controls and navigation.
-- [ ] I understand models, views, delegates, and roles.
-- [ ] I can create purposeful states and animation.
-- [ ] I can use QML linting, formatting, debugging, and profiling tools.
-- [ ] My UI supports keyboard navigation and accessible descriptions.
+Not for this roadmap. Qt Widgets remains useful for existing applications and traditional desktop interfaces, but this path focuses on QML and Qt Quick. Learn Widgets later if a project, employer, or existing codebase requires it.
 
-## Integration and shipping
+### Can I follow the guide on Linux, Windows, or macOS?
 
-- [ ] I can expose a focused C++ API to QML.
-- [ ] I can implement a correct `QAbstractListModel`.
-- [ ] Domain rules can be tested without a GUI.
-- [ ] Long-running work does not block the GUI thread.
-- [ ] The application handles loading, empty, error, and success states.
-- [ ] I have measured performance before optimizing.
-- [ ] I can produce and document a release build.
-- [ ] My capstone can be built and tested by someone else.
+Yes. C++, CMake, Qt 6, QML, and Qt Quick are cross-platform. Installation and deployment commands vary, but the programming concepts and project structure remain the same.
+
+### Which editor or IDE is required?
+
+None is required by the curriculum. Qt Creator usually provides the easiest first Qt experience because its kits, documentation, debugger, QML tools, and project templates work together. Any environment that handles CMake, C++, and the QML language server can be used.
+
+### What if my compiler lacks a C++23 library feature?
+
+Check the compiler's support table and use the supported subset. The roadmap targets modern C++23 practices, but a project does not need every C++23 feature. Do not replace a clear, portable solution merely to use a newer feature.
+
+### Can I use Qt 6.5 or Qt 6.8 instead of the newest Qt release?
+
+Yes. The starter example requires Qt 6.5 or newer. Use the newest stable Qt 6 patch practical for the target platform, then check the documentation for that version when an API differs.
+
+### Must the roadmap take exactly 24 weeks?
+
+No. The completion tests and projects decide when to advance. Use the relaxed, standard, or intensive schedule as a planning aid, not as a deadline.
+
+### What should I do when a tutorial uses Qt 5 or qmake?
+
+Use it only for concepts that remain relevant, such as properties, signals, layouts, models, and delegates. For new projects, confirm setup and APIs in current Qt 6 documentation, use CMake, and prefer `qt_add_qml_module()`.
+
+### When am I ready for Quickshell?
+
+Begin after completing the QML and Qt Quick phase. Completing C++/QML integration first is even better because it strengthens models, architecture, debugging, and data flow, although many shell components can be written mainly in QML.
 
 ---
 
-# 20. The first seven days
+## 19. Graduation checklist
 
-## Day 1
+The detailed completion tests now live beside the lessons they assess. This final list checks whether the entire roadmap has come together.
 
-- Install or verify the compiler, CMake, Git, and an IDE/editor.
-- Compile and run the first C++ program.
-- Change the greeting and deliberately create one compiler error.
-
-## Day 2
-
-- Learn variables, initialization, types, and input/output.
-- Build a temperature converter.
-
-## Day 3
-
-- Learn conditions and loops.
-- Build FizzBuzz and begin a number-guessing game.
-
-## Day 4
-
-- Learn functions and scope.
-- Refactor the guessing game into functions.
-
-## Day 5
-
-- Learn strings and vectors.
-- Build a small grade tracker.
-
-## Day 6
-
-- Use a debugger on the guessing game.
-- Fix at least one issue by inspecting state rather than guessing.
-
-## Day 7
-
-- Rebuild one program from an empty folder without notes.
-- Commit the week's projects to Git.
-- Write three lessons learned and choose next week's exercises.
+- [ ] I can build a multi-file C++23 project from a clean CMake configuration.
+- [ ] I can explain initialization, ownership, lifetime, RAII, and my container choices.
+- [ ] I can investigate a failure using diagnostics, a debugger, tests, and sanitizers.
+- [ ] I understand Qt's event loop, `QObject` ownership, signals, slots, and thread affinity.
+- [ ] I can build a responsive QML interface from reusable components and controls.
+- [ ] I can implement and update a C++ list model correctly.
+- [ ] I can expose a focused C++ API to QML without coupling domain rules to visual components.
+- [ ] Long-running work and network operations do not block the interface thread.
+- [ ] The application handles loading, empty, populated, offline, and failure states clearly.
+- [ ] I can test important rules without launching the graphical interface.
+- [ ] I can profile before optimizing and resolve unexplained build or QML warnings.
+- [ ] Another person can build, test, use, and understand my capstone from its documentation.
 
 ---
 
-# Final rule
+## Final rule
 
 Do not wait to feel ready. Build small things, let errors become specific, and use each project to expose the next skill. Consistent practice and completed software matter more than racing through the calendar.
