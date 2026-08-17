@@ -1,6 +1,6 @@
 # E Gurl Community Edition: C++23 + Qt 6 + QML Roadmap
 
-**Free community learning guide · CC BY 4.0 · Last verified 2026-08-16**
+**Free community learning guide · CC BY 4.0 · Updated 2026-08-17 · Resources last verified 2026-08-16**
 
 [License](LICENSE.md) · [How to contribute](CONTRIBUTING.md)
 
@@ -25,6 +25,7 @@ It does **not** require prior C++, Qt, QML, or GUI experience.
 
 - [Technology map and recommended versions](#1-the-technology-map)
 - [Complete visual roadmap](#2-the-complete-visual-roadmap)
+- [Choose your starting point](#choose-your-starting-point)
 - [Your first seven days](#your-first-seven-days)
 - [How to study effectively](#3-how-to-study-effectively)
 - [Beginner glossary](#beginner-glossary)
@@ -39,6 +40,7 @@ It does **not** require prior C++, Qt, QML, or GUI experience.
 - [Capstone specification](#12-capstone-specification)
 - [Project ladder](#13-project-ladder)
 - [Starter Qt Quick project](#14-a-modern-qt-quick-starter-project)
+- [Troubleshooting quick reference](#troubleshooting-quick-reference)
 - [Resources and YouTube channels](#15-free-curriculum-and-documentation)
 - [Topics to postpone](#16-topics-to-postpone)
 - [Optional Quickshell path](#17-optional-specialization--quickshell-and-linux-shells)
@@ -144,6 +146,27 @@ flowchart TD
 | Intensive | 15–20 hours | 12–16 weeks | Learners who can code nearly every day |
 
 The calendar is only a pacing tool. Advance when the phase project works and the completion tests can be passed without copying a solution.
+
+---
+
+## Choose your starting point
+
+This roadmap is written for complete beginners, but experienced learners do not need to repeat material they can already demonstrate. Choose a starting point by **proof**, not by how familiar a topic sounds.
+
+| Current experience | Recommended start | Proof to complete before skipping ahead |
+|---|---|---|
+| New to programming or unable to compile without instructions | [Phase 0](#4-phase-0--tools-and-the-first-compile) | Compile, run, deliberately break, and repair a small program; explain source, compiler, linker, and executable |
+| Comfortable with basic syntax but not multi-file C++ | [Phase 1](#5-phase-1--c-foundations) | Write small programs with functions, conditions, loops, strings, and input validation |
+| Comfortable with classes, containers, and multi-file programs | Try the Phase 1 completion tests, then enter [Phase 2](#6-phase-2--modern-c-and-the-standard-library) | Build the Phase 1 contact or inventory project from an empty folder without a tutorial |
+| Comfortable with modern C++ ownership and the standard library, but not engineering tools | [Phase 3](#7-phase-3--cmake-git-debugging-and-tests) | Explain RAII and object lifetime, then build the Phase 2 CLI project |
+| Comfortable with modern C++, CMake, Git, debugging, and tests, but new to Qt | [Phase 4](#8-phase-4--qt-core-and-the-qt-object-model) | Configure, build, test, and debug a clean CMake project from its README |
+| Familiar with Qt C++ but new to QML and Qt Quick | [Phase 5](#9-phase-5--qml-qt-quick-and-controls) | Explain the Qt event loop, `QObject` ownership, signals, slots, and thread affinity |
+| Able to build reusable QML interfaces but new to C++ integration | [Phase 6](#10-phase-6--connecting-c-and-qml) | Build a QML interface with bindings, controls, models, delegates, states, keyboard use, and no unexplained warnings |
+| Interested mainly in Quickshell | Complete Phase 5 first; Phase 6 is strongly recommended | Pass the QML phase completion test before entering [the Quickshell path](#17-optional-specialization--quickshell-and-linux-shells) |
+
+> [!TIP]
+> **When uncertain, start one phase earlier**
+> Repeating a small project quickly costs little. Skipping a weak foundation makes later Qt and QML errors much harder to diagnose.
 
 ---
 
@@ -367,11 +390,12 @@ Learn:
 - `if`, `else`, `switch`, `while`, and `for`.
 - Scope and compiler warnings.
 
-Build:
+**Required project:** build a menu-driven calculator with input validation.
+
+**Choose one additional exercise:**
 
 - Temperature converter.
 - Number-guessing game.
-- Menu-driven calculator with input validation.
 
 - [ ] **Completion test:** write FizzBuzz and the calculator from an empty file.
 
@@ -385,9 +409,10 @@ Learn:
 - Header/source separation and include guards.
 - Namespaces, `const`, `auto`, `enum class`, and simple `struct` types.
 
-Build:
+**Required project:** build a multi-file unit converter.
 
-- A multi-file unit converter.
+**Choose one additional exercise:**
+
 - Rock-paper-scissors with functions for each rule.
 - A small reusable math or text utility library.
 
@@ -405,11 +430,12 @@ Learn:
 - Text-file input and output.
 - Separating data, logic, and presentation.
 
-Build:
+**Required project:** build a contact list stored in a simple text format.
+
+**Choose one additional exercise:**
 
 - Word-frequency counter.
 - Grade tracker with statistics.
-- Contact list stored in a simple text format.
 
 - [ ] **Completion test:** load records, filter them, sort them, calculate a result, and save them.
 
@@ -424,10 +450,11 @@ Learn:
 - Operator overloading only where it makes a type clearer.
 - Keeping input/output outside domain objects.
 
-Build:
+**Required project:** build an inventory containing products.
+
+**Choose one additional exercise:**
 
 - Bank-account model with enforced invariants.
-- Inventory containing products.
 - Small turn-based combat model.
 
 - [ ] **Completion test:** design two collaborating classes without public mutable data.
@@ -458,10 +485,11 @@ Learn:
 
 Avoid manual `new` and `delete` in ordinary application code while learning. Understand them, then use containers and RAII types.
 
-Build:
+**Required project:** build a tree or scene structure with explicit ownership.
+
+**Choose one additional exercise:**
 
 - Resource-owning class using a standard RAII type.
-- Tree or scene structure with explicit ownership.
 - Exercise that identifies dangling references and lifetime errors.
 
 - [ ] **Completion test:** draw the owner and expected lifetime of every object in a small program.
@@ -476,9 +504,10 @@ Learn:
 - Templates at a practical introductory level.
 - Concepts as readable template constraints.
 
-Build:
+**Required project:** build a configuration parser that returns useful errors.
 
-- Configuration parser returning useful errors.
+**Choose one additional exercise:**
+
 - File organizer with `std::filesystem`.
 - Timer or Pomodoro engine using `std::chrono`.
 
@@ -495,9 +524,10 @@ Learn:
 - Iterator invalidation and algorithm complexity.
 - Lambdas with captures.
 
-Build:
+**Required project:** build a searchable catalog using an appropriate associative container.
 
-- Searchable catalog using an appropriate associative container.
+**Choose one additional exercise:**
+
 - Benchmark comparing two reasonable container choices.
 - Refactor loops into standard algorithms where clarity improves.
 
@@ -516,7 +546,7 @@ Prioritize:
 - Modules as awareness only until the toolchain and project justify them.
 - Coroutines as awareness only; learn ordinary control flow and Qt's asynchronous APIs first.
 
-Build a persistent CLI task tracker with:
+**Required phase project:** build a persistent CLI task tracker with:
 
 - Add, edit, delete, list, filter, and sort.
 - File persistence.
@@ -637,9 +667,10 @@ Learn:
 - `QTimer` and event-driven thinking.
 - Qt value types versus `QObject` subclasses.
 
-Build:
+**Required project:** build a console countdown timer using `QTimer`.
 
-- Console countdown timer using `QTimer`.
+**Choose one additional exercise:**
+
 - Event-driven status monitor.
 - Small signal-and-slot experiment with custom objects.
 
@@ -655,10 +686,9 @@ Learn:
 - `QUrl`.
 - `QNetworkAccessManager`, replies, errors, and asynchronous results.
 
-Build:
+**Required project:** build a small API client with loading, success, empty, and error states.
 
-- JSON-backed settings or notes service.
-- Small API client with loading, success, empty, and error states.
+**Optional additional exercise:** build a JSON-backed settings or notes service.
 
 - [ ] **Completion test:** retrieve or load data asynchronously and report failures without blocking the UI thread.
 
@@ -675,11 +705,9 @@ Learn:
 
 Do not move work to a thread automatically. First determine whether the work blocks and whether an asynchronous Qt API already exists.
 
-Build:
+**Required project:** build an in-memory list model with tests for its domain rules and JSON conversion.
 
-- In-memory list model.
-- Background calculation with safe result delivery.
-- Tests for JSON conversion and domain rules.
+**Optional additional exercise:** add a background calculation with safe result delivery.
 
 - [ ] **Completion test:** explain which thread owns each `QObject` and how results cross thread boundaries.
 
@@ -719,11 +747,12 @@ Learn:
 - JavaScript expressions used sparingly for presentation logic.
 - Modern unversioned imports.
 
-Build:
+**Required project:** build a unit converter with live property bindings.
+
+**Choose one additional exercise:**
 
 - Profile card.
 - Counter with reusable controls.
-- Unit converter with live property bindings.
 
 - [ ] **Completion test:** explain why assigning to a bound property may replace its binding.
 
@@ -738,10 +767,9 @@ Learn:
 - DPI-aware sizing and responsive structure.
 - Focus, keyboard navigation, and pointer handlers.
 
-Build:
+**Required project:** build a responsive dashboard that works at several window sizes.
 
-- Responsive dashboard that works at several window sizes.
-- Reusable card, toolbar, and empty-state components.
+**Optional stretch:** extract reusable card, toolbar, and empty-state components.
 
 - [ ] **Completion test:** resize the interface aggressively without overlaps or clipped essential content.
 
@@ -755,10 +783,9 @@ Learn:
 - Resource organization and QML modules.
 - Theme tokens instead of duplicated literal colors and dimensions.
 
-Build:
+**Required project:** build a multi-page settings application.
 
-- Multi-page settings application.
-- Light/dark theme based on centralized tokens.
+**Optional stretch:** add a light/dark theme based on centralized tokens.
 
 - [ ] **Completion test:** add a new page and navigation action without editing unrelated components.
 
@@ -772,10 +799,9 @@ Learn:
 - Selection, filtering, sorting, and empty states.
 - Why delegates should not own authoritative application data.
 
-Build:
+**Required project:** build a contact browser.
 
-- Contact browser.
-- Media or application launcher UI with filtering.
+**Optional additional project:** build a media or application launcher UI with filtering.
 
 - [ ] **Completion test:** replace the prototype model without redesigning the delegate.
 
@@ -789,10 +815,9 @@ Learn:
 - `qmllint` and `qmlformat`.
 - Accessible names, descriptions, keyboard use, contrast, and motion restraint.
 
-Build:
+**Required project:** build a polished dashboard with loading, error, empty, and populated states.
 
-- Animated notification center.
-- Polished dashboard with loading, error, empty, and populated states.
+**Optional additional project:** build an animated notification center.
 
 - [ ] **Completion test:** the application works by keyboard, communicates state clearly, and has no unexplained QML warnings.
 
@@ -842,10 +867,9 @@ Learn:
 
 Use the free Qt Academy courses [How to Expose C++ to QML](https://www.qt.io/academy/course-catalog) and [Introduction to Signals and Slots](https://www.qt.io/academy/course-catalog).
 
-Build:
+**Required project:** build a C++ settings service displayed and edited from QML.
 
-- C++ settings service displayed and edited from QML.
-- Backend status object with observable properties.
+**Optional additional exercise:** add a backend status object with observable properties.
 
 - [ ] **Completion test:** a C++ state change updates QML through notification, without polling.
 
@@ -859,10 +883,7 @@ Learn:
 - Emitting `dataChanged()` with accurate indexes and roles.
 - Proxy models where suitable.
 
-Build:
-
-- C++ task model displayed by a QML `ListView`.
-- Add, edit, remove, filter, and persist tasks.
+**Required project:** build a C++ task model displayed by a QML `ListView`, with actions to add, edit, remove, filter, and persist tasks.
 
 - [ ] **Completion test:** individual changes update the correct delegate without resetting the entire model.
 
@@ -877,7 +898,7 @@ Learn:
 - Test doubles around filesystem or network boundaries.
 - Keeping domain logic independent of visual components.
 
-Build a task manager with:
+**Required phase project:** build a task manager with:
 
 - C++ domain rules and list model.
 - QML pages, delegates, dialogs, and responsive layout.
@@ -1001,13 +1022,14 @@ Do not make every practice project a calculator. Reuse the same concept in diffe
 
 ## 14. A modern Qt Quick starter project
 
-This example uses C++23, CMake, Qt Quick, a QML module, and modern unversioned imports. It requires Qt 6.5 or newer so it remains usable across several recent Qt 6 releases.
+This example uses C++23, CMake, Qt Quick, a QML module, modern unversioned imports, and a small C++ object exposed to QML. It requires Qt 6.5 or newer so it remains usable across several recent Qt 6 releases.
 
 ### Directory structure
 
 ```text
 community-hello/
 ├── CMakeLists.txt
+├── greetingcontroller.h
 ├── main.cpp
 └── Main.qml
 ```
@@ -1032,6 +1054,8 @@ target_compile_features(CommunityHello PRIVATE cxx_std_23)
 qt_add_qml_module(CommunityHello
     URI Community.Hello
     VERSION 1.0
+    SOURCES
+        greetingcontroller.h
     QML_FILES
         Main.qml
 )
@@ -1042,6 +1066,55 @@ install(TARGETS CommunityHello
     BUNDLE DESTINATION .
     RUNTIME DESTINATION bin
 )
+```
+
+### `greetingcontroller.h`
+
+```cpp
+#pragma once
+
+#include <QObject>
+#include <QString>
+#include <QtQml/qqmlregistration.h>
+
+class GreetingController : public QObject
+{
+    Q_OBJECT
+    QML_ELEMENT
+    Q_PROPERTY(QString greeting READ greeting NOTIFY greetingChanged FINAL)
+
+public:
+    explicit GreetingController(QObject* parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
+    [[nodiscard]] QString greeting() const
+    {
+        return m_greeting;
+    }
+
+    Q_INVOKABLE void greet(const QString& name)
+    {
+        const QString cleanedName{ name.trimmed() };
+        const QString nextGreeting{ cleanedName.isEmpty()
+            ? QStringLiteral("Hello from C++!")
+            : QStringLiteral("Hello, %1!").arg(cleanedName) };
+
+        if (nextGreeting == m_greeting) {
+            return;
+        }
+
+        m_greeting = nextGreeting;
+        emit greetingChanged();
+    }
+
+signals:
+    void greetingChanged();
+
+private:
+    QString m_greeting{ QStringLiteral("Hello from C++!") };
+};
 ```
 
 ### `main.cpp`
@@ -1081,22 +1154,40 @@ ApplicationWindow {
     ColumnLayout {
         anchors.centerIn: parent
         spacing: 16
+        width: Math.min(parent.width - 48, 360)
+
+        GreetingController {
+            id: controller
+        }
 
         Label {
-            id: greeting
-            text: qsTr("Hello, Qt 6!")
+            text: controller.greeting
             font.pixelSize: 28
             Layout.alignment: Qt.AlignHCenter
         }
 
+        TextField {
+            id: nameField
+            placeholderText: qsTr("Enter your name")
+            Layout.fillWidth: true
+            onAccepted: controller.greet(text)
+        }
+
         Button {
-            text: qsTr("Change greeting")
+            text: qsTr("Ask C++ to greet me")
             Layout.alignment: Qt.AlignHCenter
-            onClicked: greeting.text = qsTr("C++ and QML are connected!")
+            onClicked: controller.greet(nameField.text)
         }
     }
 }
 ```
+
+The bridge has four parts:
+
+1. `QML_ELEMENT` registers `GreetingController` in the QML module.
+2. `Q_PROPERTY` exposes readable C++ state to QML.
+3. `Q_INVOKABLE` lets the button request a C++ action.
+4. `greetingChanged()` tells QML to reevaluate `controller.greeting` only when the value changes.
 
 ### Build and run
 
@@ -1113,6 +1204,40 @@ Run the generated QML lint target when available:
 ```bash
 cmake --build build --target CommunityHello_qmllint
 ```
+
+---
+
+## Troubleshooting quick reference
+
+Start with the first complete error, not the last line of a long error cascade. Save every edited file, run the build from a terminal when possible, and confirm that the command is using the project and build directory you expect.
+
+| Symptom | Likely cause | First useful check |
+|---|---|---|
+| `g++`, `clang++`, `cmake`, or `ninja` is not found | The tool is not installed or is missing from `PATH` | Run the corresponding `--version` command from Phase 0 |
+| CMake cannot find `Qt6Config.cmake` | Qt development files are missing or CMake is looking at a different Qt installation | Check the selected Qt Creator kit or the Qt installation prefix; do not download individual libraries from random websites |
+| `Could not create named generator Ninja` | Ninja is unavailable | Install Ninja or configure without `-G Ninja` so CMake chooses another available generator |
+| `undefined reference` or `unresolved external symbol` | A definition is missing, a source file is absent from the target, or a declaration and definition do not match | Compare the complete function signatures and inspect the target's source list in `CMakeLists.txt` |
+| The build succeeds but the executable is not at `./build/CommunityHello` | A multi-configuration generator placed it in a configuration subdirectory | Inspect the final build output and check paths such as `build/Debug` or `build/Release` |
+| `module "..." is not installed` | The QML import, module URI, installed Qt modules, or generated QML module does not match | Compare the `import`, `URI`, and `engine.loadFromModule()` strings exactly |
+| `QQmlApplicationEngine failed to load component` | A QML syntax, type, property, or import error occurred earlier in the log | Read the first QML error containing a filename and line number, then run the lint target |
+| A window is blank or never appears | The root window is invisible, has no usable size, or failed while creating a child object | Confirm `visible: true`, a nonzero size, and no preceding QML errors |
+| Code changes do not appear | The file was not saved, a different build directory is running, or the QML module was not rebuilt | Save, rebuild, and verify the executable path printed by the build or IDE |
+| The application reports an `xcb`, Wayland, Cocoa, or Windows platform-plugin error | Runtime plugins are missing or Qt libraries from different installations are being mixed | Run through the selected Qt kit or deployment tool and inspect the complete plugin diagnostic |
+| The program appears to print nothing | It may be waiting for input, running in another terminal buffer, or exiting before the output is noticed | Look for an input prompt, run the executable directly in a visible terminal, and add a newline to output |
+
+When the current build directory may be stale, configure a separate directory instead of deleting work blindly:
+
+```bash
+cmake -S . -B build-fresh -G Ninja
+cmake --build build-fresh
+```
+
+If the fresh build fails in the same way, collect these four facts before searching:
+
+1. The first complete error and its filename or target.
+2. The exact configure, build, or run command.
+3. Compiler, CMake, and Qt versions.
+4. What was expected and what actually happened.
 
 ---
 
@@ -1143,6 +1268,45 @@ Do not attempt to watch every linked channel. Pick one primary course, use docum
 7. **[Qt's First Steps with QML](https://doc.qt.io/qt-6/qmlfirststeps.html)** — official text introduction.
 8. **[QML and C++ integration overview](https://doc.qt.io/qt-6/qtqml-cppintegration-overview.html)** — official bridge between the two layers.
 9. **[Qt examples and tutorials](https://doc.qt.io/qt-6/qtexamplesandtutorials.html)** — runnable examples for targeted study.
+
+### LearnCpp checkpoints for the C++ phases
+
+Follow LearnCpp in chapter order. The roadmap's week labels group related skills and projects; they are not a reason to jump over prerequisite chapters. If a checkpoint takes longer than the suggested week, extend the schedule.
+
+The chapter structure in this table was checked on **2026-08-17**.
+
+| Checkpoint | LearnCpp reading | Evidence before continuing |
+|---|---|---|
+| Toolchain and first compile | Chapters **0–1**: setup, build pipeline, warnings, language standard, variables, input/output, identifiers, expressions, and the first program | Compile and run a program, create and repair a compiler error, and finish the Chapter 1 quiz |
+| Functions and debugging | Chapters **2–3**: functions, multiple files, namespaces, headers, program design, and debugger fundamentals | Split a small program into headers and source files, then diagnose one problem with a debugger |
+| Values, control flow, and errors | Chapters **4–9**; Chapter O on bit manipulation is optional | Build the validated calculator and number-guessing game without copying a solution |
+| Types, references, and classes | Chapters **10–15**; treat the separate constexpr chapter F as a later deepening pass if it interrupts momentum | Explain value versus reference parameters and design two classes with enforced invariants |
+| Containers and algorithms | Chapters **16–18**: `std::vector`, arrays, iterators, and algorithms | Load, filter, sort, calculate, and save a collection of records |
+| Lifetime, ownership, and move semantics | Chapters **19–23**, prioritizing destructors, lambdas, copying, smart pointers, move semantics, and object relationships | Draw the ownership and lifetime of the objects in a small program and remove unnecessary manual allocation |
+| Selective advanced material | Chapters **24–28** as needed: learn inheritance and virtual functions for recognition, practical templates, exception fundamentals, input validation, and file I/O | Complete the Phase 2 CLI project; do not delay Qt merely to memorize every advanced subtopic |
+| C++23 orientation | Appendix **B.5**, plus cppreference and compiler-support tables for features used by a project | Use a supported modern feature because it improves the design, not merely because it is new |
+
+> [!TIP]
+> **If you are currently at LearnCpp lesson 1.7**
+> Finish lessons **1.8–1.11** and the Chapter 1 quiz. Then watch **C++ Workflow**, **Hello World**, **Variables in C++**, and **Making mistakes and small changes** from the table below. Recreate one small program from an empty file before starting Chapter 2.
+
+### Beginner video checkpoints
+
+Videos reinforce the written course; they do not replace its exercises and quizzes.
+
+| Read first | Watch | Purpose |
+|---|---|---|
+| LearnCpp 0.5–0.7 | [C++ Workflow in a Compiled Language](https://www.youtube.com/watch?v=JFAgV_rhoVg) and [Hello World in C++](https://www.youtube.com/watch?v=xF4WePTZlWQ) — Mike Shah | Connect editing, compiling, linking, and running |
+| LearnCpp Chapter 1 | [Variables in C++](https://www.youtube.com/watch?v=zB9RI8_wExo) — The Cherno | Reinforce types, variables, initialization, and basic memory ideas |
+| LearnCpp Chapter 1 | [Making mistakes and small changes while learning](https://www.youtube.com/watch?v=TFCTYZlUT-Y) — Mike Shah | Practice deliberate experiments instead of passive copying |
+| LearnCpp Chapter 1, optional deeper pass | [How C++ Works](https://www.youtube.com/watch?v=SfGuIVzE_Os), [How the Compiler Works](https://www.youtube.com/watch?v=3tIqpEmWMLI), and [How the Linker Works](https://www.youtube.com/watch?v=H4s55GgAg0I) — The Cherno | Build a clearer mental model of translation and linking |
+| LearnCpp Chapter 2 | [Functions in C++](https://www.youtube.com/watch?v=V9zuox47zr0) and [C++ Header Files](https://www.youtube.com/watch?v=9RJTQmK0YPI) — The Cherno | Reinforce functions and multi-file organization |
+| LearnCpp Chapter 4 | [C++ Primitive Data Types](https://www.youtube.com/watch?v=gdv2bNZyko0) — Mike Shah | Review fundamental types after reading them |
+| LearnCpp Chapters 5 and 7 | [`const` in C++](https://www.youtube.com/watch?v=M3LaHE6upFU) and [C++ Block Scope](https://www.youtube.com/watch?v=RC8iNDS8fPw) — Mike Shah | Reinforce constants, scope, and lifetime boundaries |
+| LearnCpp Chapter 8 | [C++ loops](https://www.youtube.com/watch?v=arbvC95H4SQ) — Mike Shah | Review `for`, range-for, `while`, and `do while` |
+| LearnCpp Chapters 16–18 | [Raw arrays and `std::array`](https://www.youtube.com/watch?v=m08rEBZP9Ns) — Mike Shah | Compare array forms after learning containers and iteration |
+
+The selected Cherno videos are older, but the listed language and build concepts remain relevant. Skip their Visual Studio-specific setup and keep using the compiler, IDE, or editor already chosen.
 
 ### Exact resource order by phase
 
